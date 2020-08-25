@@ -1,0 +1,83 @@
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 28px 0 28px 0;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 293px));
+    justify-content: center;
+    grid-gap: 28px;
+}
+
+.post {
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+
+.post-image {
+    margin: 0;
+}
+
+.post-image img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.post-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.post:hover .post-overlay {
+    display: flex;
+}
+
+.post-likes,
+.post-comments {
+    display: inline-block;
+    width: 80px;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.post-likes::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+    background-image: url(./images/heart.svg);
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.post-comments::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+    background-image: url(./images/dialogue.svg);
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+    .posts {
+        grid-gap: 3px;
+    }
+}
